@@ -6,6 +6,34 @@
   "description": "uniapp",
   "glyphs": [
     {
+      "icon_id": "68268",
+      "name": "分享",
+      "font_class": "fenxiang",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "2674474",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "12434516",
+      "name": "播放",
+      "font_class": "bofang1",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "35646046",
+      "name": "Search",
+      "font_class": "Search",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
       "icon_id": "1718358",
       "name": "左箭头",
       "font_class": "zuojiantou",

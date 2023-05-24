@@ -5,7 +5,7 @@
 			<scroll-view scroll-y="true">
 				<!-- 搜索歌曲 -->
 				<view class="index-search">
-					<text class="iconfont">1</text>
+					<text class="iconfont icon-Search"></text>
 					<input type="text" placeholder="搜索歌曲">
 				</view>
 				<!-- 歌曲榜单 -->

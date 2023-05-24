@@ -1,0 +1,23 @@
+{
+  "id": "4082012",
+  "name": "music1",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "uniapp",
+  "glyphs": [
+    {
+      "icon_id": "1718358",
+      "name": "左箭头",
+      "font_class": "zuojiantou",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "6582358",
+      "name": "主页",
+      "font_class": "zhuye",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    }
+  ]
+}

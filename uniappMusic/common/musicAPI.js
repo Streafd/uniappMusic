@@ -33,3 +33,83 @@ export const musiclist =(id)=>{
 		})
 	})
 }
+
+//获取该音乐数据
+	export const songDetail =(id)=>{
+		return new Promise((reslove,reject)=>{
+			uni.request({
+				url:`${baseURL}/song/url?id=${id}`,
+				success: (res) => {
+					// console.log(res);
+					reslove(res)
+				},
+				complete: () => {
+					
+				}
+			})
+		})
+	}
+	//获取相似音乐
+	export const minisong =(id)=>{
+		return new Promise((reslove,reject)=>{
+			uni.request({
+				url:`${baseURL}/simi/song?id=${id}`,
+				success: (res) => {
+					// console.log(res);
+					reslove(res)
+				},
+				complete: () => {
+					
+				}
+			})
+		})
+	}
+	
+	//获取歌词
+	export const lyricDetail =(id)=>{
+		return new Promise((reslove,reject)=>{
+			uni.request({
+				url:`${baseURL}/lyric?id=${id}`,
+				success: (res) => {
+					// console.log(res);
+					reslove(res)
+				},
+				complete: () => {
+					
+				}
+			})
+		})
+	}
+	
+	
+	//获取评论
+	export const commentmusic =(id)=>{
+		return new Promise((reslove,reject)=>{
+			uni.request({
+				url:`${baseURL}/comment/music?id=${id}`,
+				success: (res) => {
+					// console.log(res);
+					reslove(res)
+				},
+				complete: () => {
+					
+				}
+			})
+		})
+	}
+	
+	//获取歌曲详情
+	export const songdetail =(id)=>{
+		return new Promise((reslove,reject)=>{
+			uni.request({
+				url:`${baseURL}/song/detail?ids=${id}`,
+				success: (res) => {
+					// console.log(res);
+					reslove(res)
+				},
+				complete: () => {
+					
+				}
+			})
+		})
+	}

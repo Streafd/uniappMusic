@@ -3,6 +3,7 @@
 		<view class="music-head-icon" v-if="icon">
 				<text class="iconfont icon-zuojiantou" @click="handleToBack"></text> |
 				<text class="iconfont icon-zhuye" @click="handleToHome"></text>
+
 		</view>
 		<text :style="{color: white}">{{title}}</text>
 	</view>

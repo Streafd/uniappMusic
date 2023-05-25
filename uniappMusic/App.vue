@@ -40,6 +40,6 @@
 		background-size: cover;
 		background-position:center 0;
 		filter:blur(10rpx);
-		transform: scale(1.2);
+		transform: scale(1.3);
 	}
 </style>

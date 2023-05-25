@@ -65,6 +65,7 @@
 
 <script>
 	import {musiclist} from '@/common/musicAPI.js'
+	import '../../common/iconfont.css'
 	export default {
 
 		data() {
@@ -132,6 +133,7 @@
 				right: 8rpx;
 				color: white;
 				font-size: 26rpx;
+				
 			}
 		}
 
@@ -189,7 +191,8 @@
 		.list-music-head {
 			height: 50rpx;
 			margin: 30rpx 0 70rpx 22rpx;
-
+			padding-top: 30rpx;
+			box-sizing: border-box;
 			// overflow: hidden;
 			text {
 				&:nth-child(1) {

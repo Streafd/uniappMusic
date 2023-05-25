@@ -9629,13 +9629,157 @@ uni.addInterceptor({
 /* 37 */,
 /* 38 */,
 /* 39 */,
-/* 40 */,
-/* 41 */,
+/* 40 */
+/*!******************************************************************!*\
+  !*** I:/HBuider文件放置区/uniapp/day1/uniappMusic/common/musicAPI.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.topList = exports.songdetail = exports.songDetail = exports.musiclist = exports.minisong = exports.lyricDetail = exports.commentmusic = void 0;
+var _config = __webpack_require__(/*! @/common/config.js */ 41);
+//获取音乐榜单,第一个参数是分页，第二个是某个榜单的id
+var topList = function topList(pageSize) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseURL, "/toplist/detail"),
+      success: function success(res) {
+        var result = res.data.list;
+        var arr = result.slice(pageSize * 6, pageSize * 6 + 6);
+        reslove(arr);
+      },
+      complete: function complete() {
+        uni.hideLoading();
+      }
+    });
+  });
+};
+//获取该音乐榜单的每项数据,第一个参数是分页，第二个是某个榜单的id
+exports.topList = topList;
+var musiclist = function musiclist(id) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseURL, "/playlist/detail?id=").concat(id),
+      success: function success(res) {
+        reslove(res);
+      },
+      complete: function complete() {
+        uni.hideLoading();
+      }
+    });
+  });
+};
+
+//获取该音乐数据
+exports.musiclist = musiclist;
+var songDetail = function songDetail(id) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseURL, "/song/url?id=").concat(id),
+      success: function success(res) {
+        // console.log(res);
+        reslove(res);
+      },
+      complete: function complete() {}
+    });
+  });
+};
+//获取相似音乐
+exports.songDetail = songDetail;
+var minisong = function minisong(id) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseURL, "/simi/song?id=").concat(id),
+      success: function success(res) {
+        // console.log(res);
+        reslove(res);
+      },
+      complete: function complete() {}
+    });
+  });
+};
+
+//获取歌词
+exports.minisong = minisong;
+var lyricDetail = function lyricDetail(id) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseURL, "/lyric?id=").concat(id),
+      success: function success(res) {
+        // console.log(res);
+        reslove(res);
+      },
+      complete: function complete() {}
+    });
+  });
+};
+
+//获取评论
+exports.lyricDetail = lyricDetail;
+var commentmusic = function commentmusic(id) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseURL, "/comment/music?id=").concat(id),
+      success: function success(res) {
+        // console.log(res);
+        reslove(res);
+      },
+      complete: function complete() {}
+    });
+  });
+};
+
+//获取歌曲详情
+exports.commentmusic = commentmusic;
+var songdetail = function songdetail(id) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseURL, "/song/detail?ids=").concat(id),
+      success: function success(res) {
+        // console.log(res);
+        reslove(res);
+      },
+      complete: function complete() {}
+    });
+  });
+};
+exports.songdetail = songdetail;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+
+/***/ }),
+/* 41 */
+/*!****************************************************************!*\
+  !*** I:/HBuider文件放置区/uniapp/day1/uniappMusic/common/config.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.baseURL = void 0;
+var baseURL = 'http://localhost:3000';
+exports.baseURL = baseURL;
+
+/***/ }),
 /* 42 */,
 /* 43 */,
 /* 44 */,
 /* 45 */,
-/* 46 */
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */
 /*!*******************************************************************!*\
   !*** I:/HBuider文件放置区/uniapp/day1/uniappMusic/common/iconfont.css ***!
   \*******************************************************************/

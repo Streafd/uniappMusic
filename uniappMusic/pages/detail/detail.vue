@@ -3,7 +3,7 @@
 		<view class="fixbg" :style="{'background-image':'url('+sonde.al.picUrl+')'}"> </view>
 		<!-- <view class="fixbg"> </view> -->
 		<musichead :title="sonde.name" :icon="true" white="white"></musichead>
-		<view class="container">
+		<view class="container" v-if="!isLoading">
 			<scroll-view scroll-y="true" >
 				<view class="detail-play" @click="handleToPlay">
 					<image :src="sonde.al.picUrl" class="detail-play-img " :class="isplayrotate==true?'detail-play-run':''"></image>
@@ -88,7 +88,8 @@
 			lyricIndex:0,
 			bgAudioManager:{},
 			iconplay:'icon-zanting',
-			isplayrotate:false
+			isplayrotate:false,
+			isLoading:true
 			}
 		},
 		onLoad(options) {
@@ -115,6 +116,10 @@
 		},
 		methods:{
 			getMusic(id){
+				uni.showLoading({
+					title:"加载中..."
+				})
+				this.isLoading=true
 				Promise.all([songdetail(id),minisong(id),commentmusic(id),lyricDetail(id),songDetail(id)]).then((res)=>{
 					if(res[0].data.code ===200){
 						this.sonde=res[0].data.songs[0]
@@ -128,8 +133,6 @@
 					
 					if(res[3].data.code===200){
 						let lyric=res[3].data.lrc.lyric
-						// console.log(lyric)
-						// console.log(lyric.split('\n'))
 						let re =/\[([^\]]+)\]([^\[]+)/g
 						let result =[]
 						lyric.replace(re,($0,$1,$2)=>{
@@ -148,7 +151,7 @@
 						//h5
 					// #ifdef H5
 					this.bgAudioManager=uni.createInnerAudioContext()
-					this.bgAudioManager.autoplay = true;
+					// this.bgAudioManager.autoplay = true;
 					this.iconplay='icon-bofang'
 					this.isplayrotate=false
 
@@ -169,9 +172,9 @@
 						this.isplayrotate=false
 						this.cancelLyricIndex()
 					})
-					
-
 					}
+					this.isLoading=false
+					uni.hideLoading()
 				});
 			},
 			//歌词时间格式化

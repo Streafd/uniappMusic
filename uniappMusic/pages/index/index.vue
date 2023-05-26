@@ -4,7 +4,7 @@
 		<view class="container">
 			<scroll-view scroll-y="true">
 				<!-- 搜索歌曲 -->
-				<view class="index-search">
+				<view class="index-search" @click="handleToSearch">
 					<text class="iconfont icon-Search"></text>
 					<input type="text" placeholder="搜索歌曲">
 				</view>
@@ -68,6 +68,11 @@
 		handleToList(value){
 			uni.navigateTo({
 				url:`/pages/list/list?id=${value}`
+			})
+		},
+		handleToSearch(){
+			uni.navigateTo({
+				url:'/pages/search/search'
 			})
 		}
 		}

@@ -113,3 +113,52 @@ export const musiclist =(id)=>{
 			})
 		})
 	}
+	
+	// /search/suggest?keywords=海阔天空
+	
+	//搜索歌曲
+	export const searchMusic =(value)=>{
+		return new Promise((reslove,reject)=>{
+			uni.request({
+				url:`${baseURL}/search?keywords=${value}`,
+				success: (res) => {
+					// console.log(res);
+					reslove(res)
+				},
+				complete: () => {
+					
+				}
+			})
+		})
+	}
+	//搜索热歌
+	export const searchHot =(value)=>{
+		return new Promise((reslove,reject)=>{
+			uni.request({
+				url:`${baseURL}/search/hot/detail`,
+				success: (res) => {
+					// console.log(res);
+					reslove(res)
+				},
+				complete: () => {
+					
+				}
+			})
+		})
+	}
+	
+	//搜索建议
+	export const searchSuggest =(value)=>{
+		return new Promise((reslove,reject)=>{
+			uni.request({
+				url:`${baseURL}/search/suggest?keywords=${value}&type=mobile`,
+				success: (res) => {
+					// console.log(res);
+					reslove(res)
+				},
+				complete: () => {
+					
+				}
+			})
+		})
+	}
